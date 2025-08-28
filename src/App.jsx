@@ -1,9 +1,10 @@
 import React from 'react'
+import Task from './components/Task'
 
 const App = () => {
   return (
-    <div>
-      App
+    <div className='w-full h-screen'>
+      <Task />
     </div>
   )
 }
