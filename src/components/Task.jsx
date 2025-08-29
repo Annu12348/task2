@@ -79,7 +79,7 @@ const Task = () => {
               <option value="custom data">custom data</option>
             </select>
           </div>
-          <div className="flex flex-col gap-1 md:w-[22%] md:mt-0 mt-8  ">
+          <div className="flex flex-col gap-1 md:w-[22%] w-full md:mt-0 mt-8  ">
             <label className="text-md capitalize tracking-tight leading-none">
               from data
             </label>
