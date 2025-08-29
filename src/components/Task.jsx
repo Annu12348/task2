@@ -52,8 +52,8 @@ const Task = () => {
 
   const clickedHandler = () => {
     exampletestApi();
-    setToDate("");
-    setFromDate("");
+    //setToDate("");
+    //setFromDate("");
   };
 
   const onClickHandler = () => {
@@ -79,7 +79,7 @@ const Task = () => {
               <option value="custom data">custom data</option>
             </select>
           </div>
-          <div className="flex flex-col gap-1 md:w-[22%] w-full md:mt-0 mt-8  ">
+          <div className="flex flex-col gap-1 md:w-[22%]  w-full md:mt-0 mt-8  ">
             <label className="text-md capitalize tracking-tight leading-none">
               from data
             </label>
@@ -88,16 +88,17 @@ const Task = () => {
               onChange={(e) => setFromDate(e.target.value)}
               className="border p-1.5 mt-1 outline-none w-full border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
               type="date"
-              placeholder="to date"
+              placeholder="from date"
             />
           </div>
-          <div className="flex flex-col gap-1 md:w-[22%] md:mt-0 mt-8  ">
+          <div className="flex flex-col gap-1 md:w-[22%] w-full md:mt-0 mt-8  ">
             <label className="text-md capitalize tracking-tight leading-none">
               to date
             </label>
             <input
-              className="border p-1.5 mt-1 outline-none  border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
+              className="border p-1.5 mt-1 outline-none w-full  border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
               type="date"
+              placeholder="to date"
               value={toDate}
               onChange={(e) => setToDate(e.target.value)}
             />
