@@ -67,7 +67,7 @@ const Task = () => {
           filter options
         </h1>
         <div className="mt-6 md:flex items-center justify-between">
-          <div className="flex flex-col gap-1 md:w-[22%]  ">
+          <div className="flex flex-col gap-1 md:w-[22%] w-full  ">
             <label className="text-md capitalize tracking-tight leading-none">
               data type
             </label>
@@ -86,8 +86,9 @@ const Task = () => {
             <input
               value={fromDate}
               onChange={(e) => setFromDate(e.target.value)}
-              className="border p-1.5 mt-1 outline-none  border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
+              className="border p-1.5 mt-1 outline-none w-full border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
               type="date"
+              placeholder="to date"
             />
           </div>
           <div className="flex flex-col gap-1 md:w-[22%] md:mt-0 mt-8  ">
