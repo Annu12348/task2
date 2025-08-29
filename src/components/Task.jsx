@@ -86,9 +86,10 @@ const Task = () => {
             <input
               value={fromDate}
               onChange={(e) => setFromDate(e.target.value)}
-              className="border p-1.5 mt-1 outline-none w-full border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
-              type="date"
-              placeholder="from date"
+             className="border p-1.5 mt-1 outline-none w-full  border-zinc-300 text-zinc-300 tracking-tight leading-none rounded"
+              type='date'
+              placeholder="dd-mm-yyyy"
+              
             />
           </div>
           <div className="flex flex-col gap-1 md:w-[22%] w-full md:mt-0 mt-8  ">
@@ -186,7 +187,7 @@ const Task = () => {
               className="md:bg-black bg-blue-500 text-white md:px-4 px-2  capitalize rounded hover:bg-blue-500"
               disabled={apiData.length === 0}
             >
-              {apiData.length > 0 ? "view" : "view"}
+              view
             </button>
           </div>
         </div>
@@ -197,24 +198,29 @@ const Task = () => {
             </h1>
             <div className="w-full border-1 mt-2 border-zinc-700 bg-zinc-300 rounded">
               <div className="w-full flex items-center justify-center    ">
-                <div className="p-3 w-[25%]  border-zinc-700 flex items-center justify-center ">
-                  <h1 className="md:text-md text-[12px] font-bold capitalize tracking-tight leading-none">
+                <div className="p-3 w-[20%]  border-zinc-700 flex items-center justify-center ">
+                  <h1 className="md:tex-md   text-center md:font-semibold font-bold capitalize tracking-tight leading-none">
                     Sender ID
                   </h1>
                 </div>
-                <div className="p-3 w-[25%] border-l-1 border-r-1 border-zinc-700 flex items-center justify-center ">
-                  <h1 className="text-md font-semibold capitalize tracking-tight leading-none">
-                    Delivered
+                <div className="md:p-3 p-5.5 w-[20%] border-l-1 border-r-1 border-zinc-700 flex items-center justify-center ">
+                  <h1 className="md:text-md text-sm  md:font-semibold font-bold capitalize tracking-tight leading-none">
+                    Delivery
                   </h1>
                 </div>
-                <div className="p-3 w-[25%] border-r-1 border-zinc-700 flex items-center justify-center ">
-                  <h1 className="text-md font-semibold capitalize tracking-tight leading-none">
+                <div className="md:p-3 p-5.5 w-[20%] border-r-1 border-zinc-700 flex items-center justify-center ">
+                  <h1 className="text-md md:font-semibold font-bold capitalize tracking-tight leading-none">
                     Failed
                   </h1>
                 </div>
-                <div className="p-3 w-[25%] flex items-center justify-center ">
-                  <h1 className="text-md font-semibold capitalize tracking-tight leading-none">
+                <div className="md:p-3 p-5.5 w-[20%] border-r-1 border-zinc-700 flex items-center justify-center ">
+                  <h1 className="text-md md:font-semibold font-bold capitalize tracking-tight leading-none">
                     other
+                  </h1>
+                </div>
+                <div className="p-3 w-[20%] flex items-center justify-center ">
+                  <h1 className="text-md md:font-semibold font-bold capitalize tracking-tight leading-none">
+                    total
                   </h1>
                 </div>
               </div>
@@ -223,24 +229,29 @@ const Task = () => {
                   key={i}
                   className="w-full flex items-center justify-center border-t-1"
                 >
-                  <div className="p-3 w-[25%] border-r-1 border-zinc-700 flex items-center justify-center ">
-                    <h1 className="text-md text-zinc-500 capitalize tracking-tight leading-none">
+                  <div className="p-3 w-[20%]  border-zinc-700 flex items-center justify-center ">
+                    <h1 className="text-sm  md:font-normal font-semibold text-zinc-500 capitalize tracking-tight leading-none">
                       {id}
                     </h1>
                   </div>
-                  <div className="p-3 w-[25%] border-r-1 border-zinc-700 flex items-center justify-center ">
+                  <div className="p-3 w-[20%] border-l-1 border-r-1 border-zinc-700 flex items-center justify-center ">
                     <h1 className="text-md text-green-600 font-semibold capitalize tracking-tight leading-none">
                       {details.delivered || 0}
                     </h1>
                   </div>
-                  <div className="p-3 w-[25%] border-r-1 border-zinc-700 flex items-center justify-center ">
+                  <div className="p-3 w-[20%] border-r-1 border-zinc-700 flex items-center justify-center ">
                     <h1 className="text-md text-red-500 font-semibold capitalize tracking-tight leading-none">
                       {details.failed || 0}
                     </h1>
                   </div>
-                  <div className="p-3 w-[25%] flex items-center justify-center ">
+                  <div className="p-3 w-[20%] border-r-1 flex items-center border-zinc-700 justify-center ">
                     <h1 className="text-md font-semibold text-blue-500 capitalize tracking-tight leading-none">
                       {details.other || 0}
+                    </h1>
+                  </div>
+                  <div className="p-3 w-[20%] flex items-center justify-center ">
+                    <h1 className="text-md font-semibold text-blue-500 capitalize tracking-tight leading-none">
+                      {Number(details.other || 0) + Number(details.failed || 0) + Number(details.delivered || 0)}
                     </h1>
                   </div>
                 </div>
